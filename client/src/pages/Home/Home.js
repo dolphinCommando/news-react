@@ -6,23 +6,23 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      articles: [{
-        title: 'Backyard Vacations',
-        url: 'https://www.nytimes.com/',
-        date: '07-15-2018'
-      },
-      {
-        title: 'A New Study Proves that Bacon is Healthy for You',
-        url: 'https://www.nytimes.com/',
-        date: '07-15-2018'
-      },
-      {
-        title: 'Blood Moon is Sign of the End Times',
-        url: 'https://www.nytimes.com/',
-        date: '07-15-2018'
-      }]
+      articles: []
     }
   }
+
+  componentDidMount() {
+    API.getScrape()
+      .then(nytScrape => {
+        console.log(nytScrape);
+        this.setState({
+          articles: nytScrape.data
+        })
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  }
+
   handleSave(data) {
     API.saveArticle(data)
     .then(response => {
@@ -38,6 +38,7 @@ class Home extends React.Component {
         title={element.title} 
         url={element.url} 
         date={element.date}
+        summary={element.summary}
         message={'Save'}
         onClick={() => this.handleSave(element)}/>
     );

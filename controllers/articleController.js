@@ -1,6 +1,7 @@
 const db = require('../models');
 const mongoose = require('mongoose');
 // mongoose.Types.ObjectId
+const scrape = require('./scrape');
 
 module.exports = {
   findArticles: function(req, res) {
@@ -45,5 +46,13 @@ module.exports = {
       .catch(err => {
         res.sendStatus(418).json(err);
       })
+  },
+  scrapeNYT: function(req, res) {
+    scrape().then(data => {
+      //console.log(data);
+      res.json(data);
+    }).catch(error => {
+      console.log(error)
+    })
   }
 }

@@ -40,6 +40,7 @@ class Saved extends React.Component {
         title={element.title} 
         url={element.url} 
         date={element.date}
+        summary={element.summary}
         message={'Delete'}
         onClick={() => this.handleDelete(element._id)}/>
     );

@@ -8,6 +8,7 @@ const NewsCard = (props) => (
     <div className="news-body">
       <p>{props.date}</p>
       <a href={props.url} target="_blank">NYT</a>
+      <p>{props.summary}</p>
     </div>
     <button className="save" onClick={() => props.onClick()}>{props.message}</button> 
   </div>

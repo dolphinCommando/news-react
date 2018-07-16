@@ -1,33 +1,28 @@
 var cheerio = require('cheerio');
 var request = require('request');
-var db = require('../models');
 
 const scrape = function() {
-  return new Promise((resolve, reject) => {
+  return new Promise(function(resolve, reject) {
     request('https://www.nytimes.com/', function (error, response, html) {
       if (error) {
         reject('Could not request site');
       }
-      console.log('request statusCode:', response && response.statusCode); 
+      //console.log('request statusCode:', response && response.statusCode); 
       const $ = cheerio.load(html);
-      $('.theme-summary').each((i, elem) => {
+      const nytData = $('.theme-summary').map((i, elem) => {
         if ($(elem).children('.story-heading').text()) {
-          db.Article.create({
+          return {
             title: $(elem).children('.story-heading').text().trim(),
-            link: $(elem).children('.story-heading').children('a').attr('href'),
-            byline: $(elem).children('.byline').text().trim(), 
+            url: $(elem).children('.story-heading').children('a').attr('href'),
             summary: $(elem).children('.summary').text().trim(),
-            note: []
-          })
-          .then(function(res) {
-            //console.log('Scrape OK!  ' + res);
-            resolve('NYT Scrape OK.');
-          })
-          .catch(function(err) {
-            reject('Error in cheerio');
-          });          
-        }  
-      });
+            date: new Date()
+          }
+        }
+      }).get();
+      //console.log(nytData);
+      
+      resolve(nytData);
+                 
     });
   });
 }

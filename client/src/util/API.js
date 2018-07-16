@@ -9,5 +9,8 @@ export default {
   },
   deleteArticle: function(id) {
     return axios.delete(`/api/articles/${id}`);
+  },
+  getScrape: function() {
+    return axios.get('/api/scrape');
   }
 }
