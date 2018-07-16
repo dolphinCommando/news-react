@@ -9,7 +9,7 @@ const NewsCard = (props) => (
       <p>{props.date}</p>
       <a href={props.url} target="_blank">NYT</a>
     </div>
-    <button className="save" onClick={() => props.onClick()}>Save</button> 
+    <button className="save" onClick={() => props.onClick()}>{props.message}</button> 
   </div>
 );
 

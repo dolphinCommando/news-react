@@ -37,7 +37,8 @@ class Home extends React.Component {
       <NewsCard 
         title={element.title} 
         url={element.url} 
-        date={element.date} 
+        date={element.date}
+        message={'Save'}
         onClick={() => this.handleSave(element)}/>
     );
     return (

@@ -6,9 +6,9 @@ module.exports = {
   findArticles: function(req, res) {
     db.Article
       .find({})
-      .sort({title: -1})
+      .sort({title: 1})
       .then(dbArticle => {
-        res.sendStatus(200).json(dbArticle);
+        res.json(dbArticle);
       })
       .catch(err => {
         res.sendStatus(418).json(err);
@@ -18,7 +18,7 @@ module.exports = {
     db.Article
       .findById(req.params.id)
       .then(dbArticle => {
-        res.sendStatus(200).json(dbArticle);
+        res.json(dbArticle);
       })
       .catch(err => {
         res.sendStatus(418).json(err);
@@ -29,7 +29,7 @@ module.exports = {
     db.Article
       .create(req.body)
       .then(dbArticle => {
-        res.sendStatus(200).json(dbArticle);
+        res.json(dbArticle);
       })
       .catch(err => {
         res.sendStatus(418).json(err);
@@ -40,7 +40,7 @@ module.exports = {
     db.Article
       .deleteOne({_id: req.params.id})
       .then(dbArticle => {
-        res.sendStatus(200).json(dbArticle);
+        res.json(dbArticle);
       })
       .catch(err => {
         res.sendStatus(418).json(err);

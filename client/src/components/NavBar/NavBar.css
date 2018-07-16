@@ -1,0 +1,24 @@
+.nav-bar {
+  padding: 2%;
+  margin-bottom: 30px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 15px 10px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 1.25em;
+  color: #000000;
+}
+
+.nav-link:hover {
+  color: #0000ff;
+}
