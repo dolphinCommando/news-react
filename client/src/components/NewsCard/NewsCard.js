@@ -1,5 +1,7 @@
 import React from 'react';
 import './NewsCard.css';
+import '../ArticleButton';
+import ArticleButton from '../ArticleButton/ArticleButton';
 
 const NewsCard = (props) => (
   <div className="news-card">
@@ -10,7 +12,7 @@ const NewsCard = (props) => (
       <a href={props.url} target="_blank">NYT</a>
       <p>{props.summary}</p>
     </div>
-    <button className="save" onClick={() => props.onClick()}>{props.message}</button> 
+    <ArticleButton message={props.message} onClick={props.onClick}/>
   </div>
 );
 

@@ -1,0 +1,13 @@
+.jumbotron {
+  background-color: #d6d4d6;
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nyt {
+  font-size: 2.0em;
+  font-style: serif;
+  text-transform: uppercase;
+  font-weight: bold; 
+}

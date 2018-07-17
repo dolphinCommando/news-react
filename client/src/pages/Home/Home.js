@@ -44,8 +44,8 @@ class Home extends React.Component {
     );
     return (
       <div>
-      <h1>Home page</h1>
-      <div>{newsCards}</div>
+      <h1>New Articles</h1>
+      <div className="news-container">{newsCards}</div>
       </div>
     );
   }

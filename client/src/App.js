@@ -5,6 +5,7 @@ import './App.css';
 import Home from './pages/Home';
 import Saved from './pages/Saved';
 import NavBar from './components/NavBar';
+import Jumbotron from './components/Jumbotron';
 
 class App extends Component {
   /*
@@ -13,7 +14,8 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="container">
+        <Jumbotron />
         <NavBar />
         <Switch>
           <Route exact path="/" component={Home} />

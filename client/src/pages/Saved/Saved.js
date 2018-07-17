@@ -46,7 +46,7 @@ class Saved extends React.Component {
     );
     return (
       <div>
-      <h1>Saved page</h1>
+      <h1>Saved Articles</h1>
       <div>{newsCards}</div>
       </div>
     );
