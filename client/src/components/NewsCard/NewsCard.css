@@ -1,4 +1,15 @@
 .news-card {
   padding: 2%;
-  border: 2px solid;
+  border-top: 1px solid;
+}
+
+.summary {
+  font-size: 1.25em;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
 }
