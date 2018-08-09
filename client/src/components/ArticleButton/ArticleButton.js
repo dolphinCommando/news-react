@@ -2,7 +2,7 @@ import React from 'react';
 import './ArticleButton.css';
 
 const ArticleButton = props => (
-  <button className="submit" onClick={() => props.onClick()}>{props.message}</button> 
+  <button className={props.buttonClass} onClick={() => props.onClick()} disabled={props.disabled}>{props.message}</button> 
 );
 
 export default ArticleButton;

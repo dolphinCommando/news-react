@@ -15,7 +15,7 @@ class Saved extends React.Component {
 
   handleDelete(id) {
     API.deleteArticle(id).then(response => {
-      console.log(response);
+      //console.log(response);
       this.retrieveArticles();
     }).catch(error => {
       console.log(error);
@@ -24,7 +24,7 @@ class Saved extends React.Component {
 
   retrieveArticles() {
     API.getArticles().then(dbArticles => {
-      console.log('Articles in DB: ' + JSON.stringify(dbArticles));
+      //console.log('Articles in DB: ' + JSON.stringify(dbArticles));
       const newArticles = dbArticles.data;
       this.setState({
         articles: newArticles
@@ -42,6 +42,8 @@ class Saved extends React.Component {
         date={element.date}
         summary={element.summary}
         message={'Delete'}
+        disabled=''
+        buttonClass='delete'
         onClick={() => this.handleDelete(element._id)}/>
     );
     return (

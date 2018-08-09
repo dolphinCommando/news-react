@@ -1,5 +1,5 @@
-.submit {
-  background-color: #0E4394;
+
+.save, .saved, .delete {
   color: #ffffff;
   border: none;
   max-width: 100px;
@@ -9,4 +9,16 @@
   text-align: center;
   text-decoration: none;
   font-size: 1.25em;
+}
+
+.save, .saved {
+  background-color: #0E4394;
+}
+
+.saved {
+  opacity: 0.5;
+}
+
+.delete {
+  background-color: #CD2813;
 }

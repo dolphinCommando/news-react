@@ -14,7 +14,7 @@ const NewsCard = (props) => {
         <p className="summary">{props.summary}</p>
         <a href={props.url} target="_blank">View on NYT</a>
       </div>
-      <ArticleButton message={props.message} onClick={props.onClick}/>
+      <ArticleButton message={props.message} buttonClass={props.buttonClass} disabled={props.disabled} onClick={props.onClick}/>
     </div>
   </div>
   );
